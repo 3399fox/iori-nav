@@ -82,8 +82,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!sitesGrid || getCardDevice() !== 'mobile') return;
     const cols = String(cardConfig.gridCols || '2');
     const mobileGridClass = cols === '1' ? 'grid-cols-1' : (cols === '3' ? 'grid-cols-3' : 'grid-cols-2');
+    const mobileCardStyleClass = cardConfig.cardStyle === 'style1' ? 'mobile-card-style1' : 'mobile-card-style2';
     sitesGrid.classList.remove('grid-cols-1', 'grid-cols-2', 'grid-cols-3');
+    sitesGrid.classList.remove('mobile-card-style1', 'mobile-card-style2');
     sitesGrid.classList.add(mobileGridClass);
+    sitesGrid.classList.add(mobileCardStyleClass);
   }
 
   function syncCardConfigForViewport(options = {}) {
